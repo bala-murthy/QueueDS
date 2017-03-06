@@ -21,6 +21,14 @@ public class QueueDSClient {
 		
 		myQueue.getQueueStats();
 		
+		myQueue.serveQueueElement();
+		myQueue.serveQueueElement();
+		myQueue.serveQueueElement();
+		myQueue.serveQueueElement();
+		myQueue.serveQueueElement();
+		myQueue.serveQueueElement();
+		myQueue.serveQueueElement();
+		
 		
 
 	}

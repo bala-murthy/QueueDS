@@ -43,13 +43,14 @@ public class QueueDS {
 		}
 		else{
 			if(isQueueEmpty()){
-				//firstElementIndex++;
 				queueArray[++firstElementIndex]=queueElement;
+				System.out.println("Added First Element "+queueElement+" at Index "+firstElementIndex);
 				lastElementIndex++;
 				nItems++;
 			}
 			else{
 				queueArray[++lastElementIndex]=queueElement;
+				System.out.println("Added "+queueElement+" at Index "+lastElementIndex);
 				nItems++;
 			}
 		}
@@ -61,8 +62,12 @@ public class QueueDS {
 		// Initialize pointer variable
 		int pointer;
 		
+		//Check if Queue is Empty. If so, do not make any attempt to process
+		if(nItems==0)
+			return;
+		
 		// print the first element in queue OR pop out first person in Queue
-		System.out.println(queueArray[firstElementIndex]+" - Element moved out of Queue and Served !!");
+		System.out.println(queueArray[firstElementIndex]+" - Element moved out of Queue!!");
 		
 		// Move others in Queue one position ahead
 		for(pointer=0;pointer <((queueArray.length-1));pointer++){
@@ -72,9 +77,9 @@ public class QueueDS {
 		nItems--;
 		lastElementIndex --;
 		
-		for(int i:queueArray){
+/*		for(int i:queueArray){
 			System.out.println("Elements in Queue :: "+ i);
-		}
+		}*/
 	}
 	
 	public void getQueueStats(){
@@ -83,6 +88,14 @@ public class QueueDS {
 		System.out.println("Index of First Element is :: "+firstElementIndex);
 		System.out.println("Index of Last Element is :: "+lastElementIndex);
 		System.out.println("Queue has "+(queueSize-(lastElementIndex+1))+" Vaccant Positions.");
+		
+		// Print All Elements in Queue
+		System.out.print("Elements in Queues are  [");
+		for(int i:queueArray){
+			System.out.print(" "+i);
+		}
+		System.out.println(" ]");
+		
 	}
 
 }
